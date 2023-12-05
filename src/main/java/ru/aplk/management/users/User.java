@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import ru.aplk.management.tables.languages.Language;
 
 import java.util.Collection;
 import java.util.List;
@@ -29,6 +30,8 @@ public class User implements UserDetails{
     private String password;
     @Column(name = "position_id")
     private Long positionId;
+    @ElementCollection
+    private List<Language> languages;
 
 
     @Enumerated(EnumType.STRING)
